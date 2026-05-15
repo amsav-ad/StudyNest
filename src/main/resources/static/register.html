@@ -1,158 +1,154 @@
 <!doctype html>
 
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
 
-<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-	<meta charset="UTF-8">
+    <title>Register | StudyNest</title>
 
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap -->
 
-	<title>Register | StudyNest</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
 
-	<!-- Bootstrap -->
+    <!-- Bootstrap Icons -->
 
-	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css"
+      rel="stylesheet"
+    />
 
-	<!-- Bootstrap Icons -->
+    <!-- Google Fonts -->
 
-	<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@600;700&family=Poppins:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
 
-	<!-- Google Fonts -->
+    <!-- Custom CSS -->
 
-	<link
-		href="https://fonts.googleapis.com/css2?family=Outfit:wght@600;700&family=Poppins:wght@300;400;500;600&display=swap"
-		rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
 
-	<!-- Custom CSS -->
+  <body>
+    <!-- ================= AUTH WRAPPER ================= -->
 
-	<link rel="stylesheet" href="css/style.css">
+    <div class="auth-wrapper">
+      <div class="card-ui auth-card">
+        <!-- ================= HEADER ================= -->
 
-</head>
+        <div class="text-center mb-4">
+          <div class="brand-icon">
+            <i class="bi bi-person-plus-fill"></i>
+          </div>
 
-<body>
+          <h1 class="navbar-brand m-0">Study<span>Nest</span></h1>
 
-	<!-- ================= AUTH WRAPPER ================= -->
+          <p class="text-muted mt-3">
+            Create your account to start managing students efficiently.
+          </p>
+        </div>
 
-	<div class="auth-wrapper">
+        <!-- ================= ALERT ================= -->
 
-		<div class="card-ui auth-card">
+        <div id="messageBox"></div>
 
-			<!-- ================= HEADER ================= -->
+        <!-- ================= FORM ================= -->
 
-			<div class="text-center mb-4">
+        <form onsubmit="registerUser(event)">
+          <!-- NAME -->
 
-				<div class="brand-icon">
+          <div class="mb-3">
+            <label class="form-label"> Full Name </label>
 
-					<i class="bi bi-person-plus-fill"></i>
+            <input
+              type="text"
+              id="name"
+              class="form-control"
+              placeholder="Enter your full name"
+              required
+            />
+          </div>
 
-				</div>
+          <!-- EMAIL -->
 
-				<h1 class="navbar-brand m-0">
+          <div class="mb-3">
+            <label class="form-label"> Email Address </label>
 
-					Study<span>Nest</span>
+            <input
+              type="email"
+              id="email"
+              class="form-control"
+              placeholder="Enter your email"
+              required
+            />
+          </div>
 
-				</h1>
+          <!-- PASSWORD -->
 
-				<p class="text-muted mt-3">
+          <div class="mb-4">
+            <label class="form-label"> Password </label>
 
-					Create your account to start
-					managing students efficiently.
+            <input
+              type="password"
+              id="password"
+              class="form-control"
+              placeholder="Create password"
+              required
+            />
+          </div>
 
-				</p>
+          <div class="form-check mt-2">
+            <input class="form-check-input" type="checkbox" id="showPassword" />
 
-			</div>
+            <label class="form-check-label text-muted" for="showPassword">
+              Show Password
+            </label>
+          </div>
 
-			<!-- ================= ALERT ================= -->
+          <!-- BUTTON -->
 
-			<div id="messageBox"></div>
+          <button class="btn btn-primary-custom w-100">Create Account</button>
+        </form>
 
-			<!-- ================= FORM ================= -->
+        <!-- ================= FOOTER ================= -->
 
-			<form onsubmit="registerUser(event)">
+        <div class="text-center mt-4">
+          <p class="text-muted">
+            Already have an account?
 
-				<!-- NAME -->
+            <a href="login.html" class="text-decoration-none fw-semibold">
+              Login
+            </a>
+          </p>
+        </div>
+      </div>
+    </div>
 
-				<div class="mb-3">
+    <!-- ================= SCRIPTS ================= -->
 
-					<label class="form-label">
+    <script src="js/api.js"></script>
 
-						Full Name
+    <script src="js/utils.js"></script>
 
-					</label>
+    <script src="js/auth.js"></script>
 
-					<input type="text" id="name" class="form-control" placeholder="Enter your full name" required>
+    <script>
+      const passwordInput = document.getElementById("password");
 
-				</div>
+      const showPassword = document.getElementById("showPassword");
 
-				<!-- EMAIL -->
-
-				<div class="mb-3">
-
-					<label class="form-label">
-
-						Email Address
-
-					</label>
-
-					<input type="email" id="email" class="form-control" placeholder="Enter your email" required>
-
-				</div>
-
-				<!-- PASSWORD -->
-
-				<div class="mb-4">
-
-					<label class="form-label">
-
-						Password
-
-					</label>
-
-					<input type="password" id="password" class="form-control" placeholder="Create password" required>
-
-				</div>
-
-				<!-- BUTTON -->
-
-				<button class="btn btn-primary-custom w-100">
-
-					Create Account
-
-				</button>
-
-			</form>
-
-			<!-- ================= FOOTER ================= -->
-
-			<div class="text-center mt-4">
-
-				<p class="text-muted">
-
-					Already have an account?
-
-					<a href="login.html" class="text-decoration-none fw-semibold">
-
-						Login
-
-					</a>
-
-				</p>
-
-			</div>
-
-		</div>
-
-	</div>
-
-	<!-- ================= SCRIPTS ================= -->
-
-	<script src="js/api.js"></script>
-
-	<script src="js/utils.js"></script>
-
-	<script src="js/auth.js"></script>
-
-</body>
-
+      showPassword.addEventListener("change", () => {
+        if (showPassword.checked) {
+          passwordInput.type = "text";
+        } else {
+          passwordInput.type = "password";
+        }
+      });
+    </script>
+  </body>
 </html>
